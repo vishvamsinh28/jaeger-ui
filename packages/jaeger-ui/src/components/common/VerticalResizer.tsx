@@ -118,6 +118,7 @@ export default class VerticalResizer extends React.PureComponent<VerticalResizer
       <div
         className={`VerticalResizer ${isDraggingCls} ${rightSide ? 'is-flipped' : ''}`}
         ref={this._setRootElm}
+        data-testid="vertical-resizer"
       >
         <div className="VerticalResizer--gripIcon" style={gripStyle} />
         <div
@@ -125,6 +126,7 @@ export default class VerticalResizer extends React.PureComponent<VerticalResizer
           className="VerticalResizer--dragger"
           onMouseDown={this._dragManager.handleMouseDown}
           style={draggerStyle}
+          data-testid="dragger"
         />
       </div>
     );
