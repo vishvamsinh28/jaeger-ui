@@ -418,6 +418,7 @@ describe('mapDispatchToProps()', () => {
 });
 
 describe('getLoopbackInterval()', () => {
+
   it('undefined value', () => {
     expect(getLoopbackInterval()).toBe('');
   });
