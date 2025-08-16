@@ -46,7 +46,7 @@ type TState<T> = {
 function createRefs<T>(length: number) {
   const rv: React.RefObject<T>[] = [];
   for (let i = 0; i < length; i++) {
-    rv.push(React.createRef<T>());
+    rv.push(React.createRef<T>() as unknown as React.RefObject<T>);
   }
   return rv;
 }
