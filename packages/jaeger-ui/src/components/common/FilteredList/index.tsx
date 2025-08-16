@@ -17,7 +17,12 @@ import { Checkbox, Tooltip } from 'antd';
 import _debounce from 'lodash/debounce';
 import { matchSorter } from 'match-sorter';
 import { IoSearch } from 'react-icons/io5';
-import { FixedSizeList as VList, ListOnItemsRenderedProps, ListOnScrollProps } from 'react-window';
+import {
+  FixedSizeList as VList,
+  type FixedSizeList,
+  type ListOnItemsRenderedProps,
+  type ListOnScrollProps,
+} from 'react-window';
 import { Key as EKey } from 'ts-key-enum';
 
 import ListItem from './ListItem';
@@ -45,9 +50,9 @@ type TState = {
 };
 
 export default class FilteredList extends React.PureComponent<TProps, TState> {
-  inputRef: React.RefObject<HTMLInputElement> = React.createRef();
-  vlistRef: React.RefObject<VList> = React.createRef();
-  wrapperRef: React.RefObject<HTMLDivElement> = React.createRef();
+  inputRef = React.createRef<HTMLInputElement>();
+  vlistRef = React.createRef<FixedSizeList<any>>();
+  wrapperRef = React.createRef<HTMLDivElement>();
   state: TState = {
     filterText: '',
     focusedIndex: null,
